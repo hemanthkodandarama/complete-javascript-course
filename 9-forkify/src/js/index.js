@@ -1,6 +1,6 @@
-// Global app controller
+import Search from './models/Search';
 
-import num from './test';
+const search = new Search('pizza');
+console.log(search);
 
-console.log(`I imported ${num} from another module!`);
-
+search.getResults();
