@@ -17,7 +17,6 @@ const controlSearch = async () => {
   // 1) Get query from the view
   const query = searchView.getInput();
   console.log(query);
-  
 
   if (query) {
     // 2) New search object and add to state
@@ -71,10 +70,12 @@ const controlRecipe = async () => {
 
     // Create new recipe object
     state.recipe = new Recipe(id);
-
+    
     try {
-      // Get recipe data
+      // Get recipe data and parse ingredients
       await state.recipe.getRecipe();
+      console.log(state.recipe.ingredients);
+      state.recipe.parseIngredients();
 
       // Calculate serving and time
       state.recipe.calcTime();
@@ -91,5 +92,7 @@ const controlRecipe = async () => {
 // window.addEventListener('hashchange', controlRecipe);
 // window.addEventListener('load', controlRecipe);
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
+
+
 
 
