@@ -18,7 +18,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
 
 const state = {};
 // For testing
-window.state = state;
+// window.state = state;
 
 /**
  * Search controller
@@ -71,8 +71,7 @@ elements.searchResPages.addEventListener('click', e => {
  */
 const controlRecipe = async () => {
   const id = window.location.hash.replace('#', '');
-  console.log(id);
-
+  
   if (id) {
     // Prepare UI for changes
     recipeView.clearRecipe();
@@ -214,5 +213,5 @@ elements.recipe.addEventListener('click', e => {
 });
 
 // Just for testing
-window.l = new List();
+// window.l = new List();
 
